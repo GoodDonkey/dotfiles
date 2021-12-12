@@ -1,0 +1,30 @@
+# 깃의 사용자별 설정 파일입니다.
+[user]
+	name = GoodDonkey
+	email = president20500@gmail.com
+# 다음 줄을 알맞게 고치고 앞의 주석을 제거하십시오:
+#	name = 장동기
+#	email = motive@jangdong-giui-MacBook-Pro.local
+[core]
+	quotepath = false
+	editor = vim
+[init]
+	defaultBranch = main
+[alias]
+	st = status
+	co = checkout
+    l = log --oneline --graph
+    ll = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %n%<(60)%C(auto)%s%C(reset) %C(dim white)%an%C(reset)'
+    lll = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %n⤥ %C(auto)%s%C(reset) %C(dim white)%an%C(reset)%n'
+	lla = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %n%<(60)%C(auto)%s%C(reset) %C(dim white)%an%C(reset)' --all
+	llla = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %n⤥ %C(auto)%s%C(reset) %C(dim white)%an%C(reset)%n' --all
+	la = log --oneline --graph --all
+	cmac = commit -ac HEAD
+	cmam = commit -am
+	rl = reflog
+	amd = commit --amend
+    amda = commit --amend -a	
+    amdano = commit -a --amend --no-edit
+	unstage = restore --staged
+
+
