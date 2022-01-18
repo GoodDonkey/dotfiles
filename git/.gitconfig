@@ -19,12 +19,14 @@
 	lla = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %n%<(60)%C(auto)%s%C(reset) %C(dim white)%an%C(reset)' --all
 	llla = log --graph --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %n⤥ %C(auto)%s%C(reset) %C(dim white)%an%C(reset)%n' --all
 	la = log --oneline --graph --all
-	cmac = commit -ac HEAD
+	cmac = commit --reset-author -ac HEAD
 	cmam = commit -am
 	rl = reflog
 	amd = commit --amend
     amda = commit --amend -a	
     amdano = commit -a --amend --no-edit
 	unstage = restore --staged
+	cmc = commit --reset-author -c HEAD
+	cmm = commit -m
 
 
