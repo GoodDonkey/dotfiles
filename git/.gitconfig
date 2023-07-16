@@ -1,13 +1,28 @@
-# 깃의 사용자별 설정 파일입니다.
+ 
 [user]
 	name = GoodDonkey
 	email = president20500@gmail.com
+
+# 깃의 사용자별 설정 파일입니다.
+; [includeIf "gitdir:~/Projects/"]
+;     path = ~/.git-GoodDonkey.conf
+[includeIf "gitdir:~/donkeyadonkey/"]
+    path = ~/donkeyadonkey/.git-donkeyadonkey.conf
+[includeIf "gitdir:~/kelogpin/"]
+    path = ~/kelogpin/.git-kelogpin.conf
+[includeIf "hasconfig:remote.*.url:https://github.com/donkeyadonkey/**"]
+    path = ~/donkeyadonkey/.git-donkeyadonkey.conf
+
+#[user]
+#	name = GoodDonkey
+#	email = president20500@gmail.com
 # 다음 줄을 알맞게 고치고 앞의 주석을 제거하십시오:
 #	name = 장동기
 #	email = motive@jangdong-giui-MacBook-Pro.local
 [core]
 	quotepath = false
 	editor = vim
+	excludesFile = /Users/motive/.gitignore
 [init]
 	defaultBranch = main
 [alias]
@@ -28,5 +43,33 @@
 	unstage = restore --staged
 	cmc = commit --reset-author -c HEAD
 	cmm = commit -m
+	amdno = commit --amend --no-edit
+    b0 = "!git branch | awk '/^\\*/{print $2}'"
+    bb = "!git branch | awk '/^\\*/{print $2}' | sed 's/wip-//;s/done-//'"
+    ba = branch -v
+    bd = branch -d
+    c0 = "!git log -1 --pretty=%B | sed '/^$/d' | sed -n '1p'"
+    cc = "!git log -1 --pretty=%B | sed '/^$/d'| sed 's/WIP-//;s/DONE-//' | sed -n '1p'" 
+    wip = "!git add . && git stash push -k && git co -B wip-`git b0` && git cmam 'WIP-Clean up commit for '`git b0`"
+    wipdone = "!git cmac && git co `git bb`"
+    wippick = "!git cherry-pick wip-`git b0`; git stash apply"
+    back = "!git branch backup-`git b0`"
+    cm0 = "!git cmam "
 
+    ai = add -i
 
+    ri = rebase -i
+    r-- = rebase --continue
+    ra = rebase --abort
+
+    sl = stash list
+    sm = stash -m
+    sap = stash apply
+
+    untrack = rm -r --cached --ignore-unmatch
+    chp = cherry-pick
+    chp-- = cherry-pick --continue
+
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"

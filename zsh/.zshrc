@@ -1,14 +1,14 @@
 # If you come from bash you might have to change your $PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # for pipenv
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
+export NOTION_TOKEN='secret_N3bhSwPr6Ca4EcABqd53iYnAHSAvIEr3xIobhJvUFmn'
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/motive/.oh-my-zsh"
 # source ~/.bash_profile
 source ~/.zprofile
-
+export JASPASS='hungryhungrycuppa22'
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/motive/Data_Study/Projects/MindTree/key/future-glider-321504-4b3a509617f3.json
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -118,3 +118,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# ruby Path 추가
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"

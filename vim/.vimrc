@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'conornewton/vim-latex-preview'
+Plug 'terryma/vim-smooth-scroll'
 
 call plug#end()
 
@@ -36,3 +37,15 @@ set background=dark
 
 let g:latex_pdf_viewer="evince"
 
+nnoremap j gj
+nnoremap k gk
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+nnoremap H ^
+nnoremap L $
+vmap H ^
+vmap L $
+nnoremap dL d$
+nnoremap dH d^
+nnoremap K gt
+nnoremap J gT
